@@ -21,13 +21,13 @@
 
                 <h1>Login</h1>
 
-                <p>Bem Vindo(a). Faça login para acessar as configurações do seu ambiente</p>
+                <p>Bem Vindo(a) <i id="nome"></i>. Faça login para acessar as configurações do seu ambiente</p>
 
                 <form action="login.php" method="post" autocomplete="on">
 
                     <div class="campo">
 
-                        <i class="material-icons">person</i>
+                        <span class="material-icons">person</span>
 
                         <input type="email" name="mail" id="imail" placeholder="Seu email" autocomplete="email" required>
 
@@ -37,7 +37,7 @@
 
                     <div class="campo">
 
-                        <i class="material-icons">vpn_key</i>
+                        <span class="material-icons">vpn_key</span>
 
                         <input type="password" name="senha" id="isenha" placeholder="Sua senha" autocomplete="current-password" required minlength="8">
 
@@ -46,12 +46,26 @@
                     </div>
 
                     <input type="submit" value="Login">
-                    <a href="esqueceu.html" class="botao">Esqueci a senha <i class="material-icons" id="email">mail</i></a>
+                    <a href="esqueceu.html" class="botao">Esqueci a senha <span class="material-icons" id="email">mail</span></a>
 
                 </form>
 
             </div>
         </section>
     </main>
+
+    <script>
+        var n = String(window.prompt('Quem é você, visitante ?'))
+
+        var nome = window.document.getElementById('nome')
+
+        if (n == 'Kawã') {
+            nome.innerHTML = `chefe`
+        } else {
+            nome.innerHTML = `${n}`
+        }
+
+    </script>
+
 </body>
 </html>
